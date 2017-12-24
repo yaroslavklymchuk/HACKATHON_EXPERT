@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+
+    <title>FindFace: search</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/searchstyle.css" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <!--h3 class="masthead-brand">Cover</h3-->
+              <nav>
+                <ul class="nav masthead-nav">
+                    <li><a href="http://127.0.0.1:8000/home/">Home</a></li>
+                  <li class="active"><a href="http://127.0.0.1:8000/about/">About</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+
+          <div class="inner cover">
+
+            <!--h1 class="cover-heading">Cover your page.</h1-->
+               <form class="form-signin" role="form" method="post" enctype="multipart/form-data">
+                  <!--input class="form-control" placeholder="Image 1 input" id="img1" type="text", name="img1">
+                  <input class="form-control" placeholder="Image 2 input" id="img2" type="image", name="img2"-->
+
+                <h2>Choose an image from form1</h2>
+                {{ prev_form.img1 }}
+              <h2>Choose an image from form2</h2>
+              {{ prev_form.img2 }}
+                   {% csrf_token %}
+                   <br><br>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Do</button>
+           </form>
+
+
+              <!--It Works!!!-->
+              {#% for i in images %#}
+                <!--img src="{#  #}{ MEDIA_URL }}{#  #}{ i.img1.url }}" class="img-thumbnail">
+                <img src="{#  #}{ MEDIA_URL }}{#  #}{ i.img2.url }}" class="img-thumbnail"-->
+              {#% endfor %#}
+              {#% if response1 == "You need to be registered here !" %#}
+                <h2>The Euclidean distance is {{ a }}</h2>
+                <h2>The result is: {{ result }}</h2>
+                <h2>{{ response1 }}</h2>
+
+          </div>
+
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p><a href="https://github.com/yaroslavklymchuk"> created by @Yaroslav_Klymchuk</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body></html>
