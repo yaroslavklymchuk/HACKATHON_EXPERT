@@ -23,7 +23,7 @@ def ResponseForSearch(request):
         if form.is_valid() and request.session['user'] == True:
 
             form.save()
-            #photo.main()
+
             sp = dlib.shape_predictor('/home/yaroslav/PycharmProjects/FindFace/shape_predictor_68_face_landmarks.dat')
             facerec = dlib.face_recognition_model_v1('dlib_face_recognition_resnet_model_v1.dat')
             detector = dlib.get_frontal_face_detector()
